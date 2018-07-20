@@ -50,7 +50,7 @@
     "build:static": "cpx 'src/{index.html,static/**}' site",
     "clean": "rimraf site && mkdirp site",
     "start": "npm run watch",
-    "test": "run-s test:*",
+    "test": "run-s test:* build",
     "test:deps": "dependency-check ./package.json --entry src/index.js",
     "test:lint": "standard | snazzy",
     "test:tape": "tape src/test.js | tap-format-spec",
