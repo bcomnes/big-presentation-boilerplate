@@ -1,0 +1,62 @@
+{
+  "name": "big-presentation-boilerplate",
+  "description": "big-presentation-boilerplate",
+  "version": "1.0.0",
+  "author": "Bret Comnes",
+  "bugs": {
+    "url": "https://github.com/bcomnes/big-presentation-boilerplate/issues"
+  },
+  "dependencies": {
+    "big-presentation": "^3.4.0",
+    "highlight.js": "^9.8.0"
+  },
+  "devDependencies": {
+    "@tap-format/spec": "^0.2.0",
+    "autoprefixer": "^9.0.0",
+    "browserify": "^16.0.0",
+    "budo": "^11.0.0",
+    "cpx": "^1.5.0",
+    "dependency-check": "^3.0.0",
+    "exorcist": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.0.0",
+    "postcss": "^7.0.0",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cli": "^6.0.0",
+    "postcss-import": "^11.0.0",
+    "postcss-reporter": "^5.0.0",
+    "postcss-url": "^7.3.1",
+    "rimraf": "^2.5.4",
+    "snazzy": "^7.0.0",
+    "standard": "^11.0.0",
+    "tape": "^4.6.2"
+  },
+  "homepage": "https://github.com/bcomnes/big-presentation-boilerplate#readme",
+  "keywords": [
+    "big",
+    "boilerplate",
+    "presentation"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcomnes/big-presentation-boilerplate.git"
+  },
+  "scripts": {
+    "build": "npm run clean && run-p build:*",
+    "build:css": "postcss src/index.css -o site/bundle.css",
+    "build:js": "browserify src/index.js --debug | exorcist site/bundle.js.map > site/bundle.js",
+    "build:static": "cpx 'src/{index.html,static/**}' site",
+    "clean": "rimraf site && mkdirp site",
+    "start": "npm run watch",
+    "test": "run-s test:*",
+    "test:deps": "dependency-check ./package.json --entry src/index.js",
+    "test:lint": "standard | snazzy",
+    "test:tape": "tape src/test.js | tap-format-spec",
+    "watch": "npm run clean && run-p watch:* build:static",
+    "watch:css": "run-s 'build:css -- --watch'",
+    "watch:js": "budo src/index.js:bundle.js --dir site --live --open",
+    "watch:static": "npm run build:static -- --watch"
+  }
+}
