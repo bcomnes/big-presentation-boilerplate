@@ -7,7 +7,7 @@ $ npm i
 $ npm start
 ```
 
-Then edit yo slides.
+Then edit your slides.
 
 - Static assets go in src/static.
 - Your big slides go into src/index.html
