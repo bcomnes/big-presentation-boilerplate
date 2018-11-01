@@ -2,3 +2,32 @@
 @import 'big-presentation/lib/big.css';
 
 .new-shiny { background: #aaaaaa; }
+
+:root {
+  --white:                 hsl(0, 0%, 100%);
+  --off-white:             hsl(0, 0%, 98%);
+  --gray-97:               hsl(0, 0%, 97%);
+  --lightest-gray:         hsl(0, 0%, 95%);
+  --lighter-gray:          hsl(0, 0%, 90%);
+  --light-gray:            hsl(0, 0%, 84%);
+  --gray:                  hsl(0, 0%, 78%);
+  --dark-gray:             hsl(0, 0%, 64%);
+  --darker-gray:           hsl(0, 0%, 49%);
+  --darkest-gray:          hsl(0, 0%, 34%);
+  --off-black:             hsl(0, 0%, 25%);
+  --black:                 hsl(0, 0%, 19%);
+}
+
+kbd {
+  background-color: var(--lighter-gray);
+  background-image: linear-gradient(var(--off-white), var(--lighter-gray));
+  background-repeat: repeat-x;
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 var(--light-gray);
+  color: var(--black);
+  display: inline-block;
+  line-height: 0.95em;
+  margin: 0 1px;
+  padding: 5px 5px 1px;
+}
