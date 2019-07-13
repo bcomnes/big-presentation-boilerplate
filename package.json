@@ -7,7 +7,6 @@
     "url": "https://github.com/bcomnes/big-presentation-boilerplate/issues"
   },
   "dependencies": {
-    "big-presentation": "^3.4.1",
     "highlight.js": "^9.8.0"
   },
   "devDependencies": {
@@ -19,6 +18,7 @@
     "dependency-check": "^3.0.0",
     "exorcist": "^1.0.0",
     "mkdirp": "^0.5.1",
+    "napa": "^3.0.0",
     "npm-run-all": "^4.0.0",
     "postcss": "^7.0.0",
     "postcss-browser-reporter": "^0.5.0",
@@ -57,6 +57,7 @@
     "watch": "npm run clean && run-p watch:* build:static",
     "watch:css": "run-s 'build:css -- --watch'",
     "watch:js": "budo src/index.js:bundle.js --dir site --live --open",
-    "watch:static": "npm run build:static -- --watch"
+    "watch:static": "npm run build:static -- --watch",
+    "prepare": "napa tmcw/big"
   }
 }

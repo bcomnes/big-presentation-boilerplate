@@ -9,21 +9,28 @@
   <script src="/bundle.js"></script>
 </head>
 
-<body class='light'>
+<body>
   <div>
-      <div><kbd>&harr;</kbd> to navigate</div>
-      <div><kbd>t</kbd> for talk</div>
-      <div><kbd>p</kbd> for print</div>
-      <div><kbd>j</kbd> for jump</div>
+    <div><kbd>&harr;</kbd> to navigate</div>
+    <div><kbd>t</kbd> for talk</div>
+    <div><kbd>p</kbd> for print</div>
+    <div><kbd>j</kbd> for jump</div>
   </div>
   <div>
     <div>Bret Comnes</div>
     <div>🌐<a href="https://bret.io">bret.io</a></div>
-    <div>🐦<a href="https://twitter.com/uhhyeahbret">@uhhyeahbret</a></div>
+    <div>🐦<a href="https://twitter.com/bcomnes">@bcomnes</a></div>
     <div>🐈<a href="https://github.com/bcomnes">github.com/bcomnes</a></div>
   </div>
   </div>
-  <div data-background-image="static/molecules.jpg"></div>
+  <div data-body-style="background-image:url(static/molecules.jpg)">Some <em>emphasis</em></div>
+  <div>
+    <pre><code>
+    var { Readable } = require(<em>'stream'</em>)
+    var s = new Readable() // proper abstract class
+    s._read = data => s.push(<em>'hi'</em>)
+    </code></pre>
+  </div>
 </body>
 
 </html>
