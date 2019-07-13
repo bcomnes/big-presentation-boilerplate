@@ -51,7 +51,7 @@
     "clean": "rimraf site && mkdirp site",
     "start": "npm run watch",
     "test": "run-s test:* build",
-    "test:deps": "dependency-check ./package.json --entry src/index.js",
+    "test:deps": "dependency-check ./package.json --entry src/index.js -i big",
     "test:lint": "standard | snazzy",
     "test:tape": "tape src/test.js | tap-format-spec",
     "watch": "npm run clean && run-p watch:* build:static",
